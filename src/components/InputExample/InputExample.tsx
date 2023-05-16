@@ -12,7 +12,6 @@ const InputExample = () => {
 			<input
 				type='text'
 				value={value}
-				onChange={onChangeHandler}
 			/>
 		</div>
 	);
