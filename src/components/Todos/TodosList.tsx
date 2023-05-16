@@ -9,7 +9,7 @@ interface TodoListProps {
 
 const TodosList = (props: TodoListProps) => {
 	return (
-		<div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '16px', padding: '16px'}}>
+		<div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '16px', paddingTop: '16px'}}>
 			{props.todos.map(todo =>
 				<Card key={todo.id} width={'200px'} theme={Theme.PRIMARY}>
 					<TodoItem todo={todo} />

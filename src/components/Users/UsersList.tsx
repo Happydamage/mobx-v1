@@ -9,7 +9,7 @@ interface UsersListInterface {
 
 const UsersList: FC<UsersListInterface> = ({users}) => {
 	return (
-		<div style={{display:'flex', flexWrap: 'wrap', gap: '16px', justifyContent: 'center', padding: '16px'}}>
+		<div style={{display:'flex', flexWrap: 'wrap', gap: '16px', justifyContent: 'center', paddingTop: '16px'}}>
 			{users.map(user =>
 				<Card key={user.id} width={'300px'} height={'300px'}>
 					<User user={user} />
