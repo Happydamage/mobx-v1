@@ -5,6 +5,7 @@ import TodosPage from '../Todos/TodosPage';
 import InputExample from '../InputExample/InputExample';
 import Navbar from '../Navbar/Navbar';
 import UserItemPage from '../Users/UserItemPage';
+import TodoItemPage from '../Todos/TodoItemPage';
 
 const AppRouter = () => {
 	return (
@@ -15,7 +16,7 @@ const AppRouter = () => {
 				<Route path={'/users/:id'} element={<UserItemPage />} />
 
 				<Route path={'/todos'} element={<TodosPage />} />
-				{/*<Route path={'/todos/:id'} element={<TodoItemPage />} />*/}
+				<Route path={'/todos/:id'} element={<TodoItemPage />} />
 
 				<Route path={'/inputs'} element={<InputExample />} />
 			</Routes>
