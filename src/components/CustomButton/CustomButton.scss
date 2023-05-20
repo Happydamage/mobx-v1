@@ -1,0 +1,15 @@
+.CustomButton
+{
+  padding: 0;
+  min-height: 2rem;
+  border-radius: .5rem;
+  outline: none;
+  overflow: hidden;
+
+  a
+  {
+    padding: .5rem 1rem;
+    text-decoration: none;
+    font: bold 20px 'Inter';
+  }
+}

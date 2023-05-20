@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.scss';
-import CustomButton from '../Button/CustomButton';
+import CustomButton from '../CustomButton/CustomButton';
 import { cn } from '@bem-react/classname';
 
 const cnNavbar = cn('Navbar');
