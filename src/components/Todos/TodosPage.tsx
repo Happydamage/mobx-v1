@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import TodosList from './TodosList';
 import { TodoModel } from './TodoModel';
 import axios from 'axios';
+import TodoListJH from '../../componentsMobx/TodoList';
 
 const TodosPage = () => {
 	const [todos, setTodos] = useState<TodoModel[]>([]);
@@ -22,6 +23,7 @@ const TodosPage = () => {
 	return (
 		<div>
 			<TodosList todos={todos} />
+			<TodoListJH />
 		</div>
 	);
 };

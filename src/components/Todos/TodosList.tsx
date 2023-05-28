@@ -13,7 +13,7 @@ const TodosList = (props: TodoListProps) => {
 		<div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '16px', paddingTop: '16px'}}>
 			{props.todos.map(todo =>
 				<Link to={`/todos/${todo.id}`} key={todo.id}>
-					<Card width={'200px'} theme={Theme.PRIMARY}>
+					<Card width={'200px'} height={'100px'} theme={Theme.PRIMARY}>
 						<TodoItem todo={todo} />
 					</Card>
 				</Link>)}

@@ -7,11 +7,12 @@ const cnCustomButton = cn('CustomButton');
 interface CustomButtonProps {
   a?: string;
   children: React.ReactNode;
+	onClick?: () => void;
 }
 
 const CustomButton = (props: CustomButtonProps) => {
 	return (
-		<button className={cnCustomButton()}>
+		<button className={cnCustomButton()} onClick={props.onClick}>
 			{props.children}
 		</button>
 	);
