@@ -1,6 +1,7 @@
 import React from 'react';
 import store from '../Store/store';
 import { observer } from 'mobx-react';
+import CustomButton from '../components/CustomButton/CustomButton';
 
 const TodoAdd = () => {
 	return (
@@ -10,9 +11,9 @@ const TodoAdd = () => {
 				value={store.newTodo}
 				onChange={(evt => (store.newTodo = evt.target.value))}
 			/>
-			<button onClick={() => store.addTodo()}>
+			<CustomButton  onClick={() => store.addTodo()} >
 				Add Todo
-			</button>
+			</CustomButton>
 		</div>
 	);
 };
