@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import newCustomer, { ClassCustomer } from '../../ELitvinova/typeScript/classes';
 
 const InputExample = () => {
 	const [value, setValue] = useState<string>('');
@@ -14,18 +15,18 @@ const InputExample = () => {
 
 	return (
 		<div style={{display: 'flex', justifyContent: 'center', gap: '16px', paddingTop: '16px'}}>
-			<input
-				type='text'
-				value={value}
-				onChange={onChangeHandler}
-				placeholder={'Управляемый'}
-			/>
-			<input
-				type='text'
-				ref={inputRef}
-				placeholder={'Не управляемый'}
-			/>
-			<button onClick={onClickHandler}>Pew</button>
+			{/*<input*/}
+			{/*	type='text'*/}
+			{/*	value={value}*/}
+			{/*	onChange={onChangeHandler}*/}
+			{/*	placeholder={'Управляемый'}*/}
+			{/*/>*/}
+			{/*<input*/}
+			{/*	type='text'*/}
+			{/*	ref={inputRef}*/}
+			{/*	placeholder={'Не управляемый'}*/}
+			{/*/>*/}
+			{/*<button onClick={onClickHandler}>Pew</button>*/}
 		</div>
 	);
 };

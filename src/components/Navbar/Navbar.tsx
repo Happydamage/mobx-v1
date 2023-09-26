@@ -21,6 +21,9 @@ const Navbar = () => {
 			<CustomButton>
 				<Link to={'/inputs'}>Inputs</Link>
 			</CustomButton>
+			<CustomButton>
+				<Link to={'/inputs'}>Examples</Link>
+			</CustomButton>
 		</div>
 	);
 };

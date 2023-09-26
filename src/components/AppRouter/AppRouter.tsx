@@ -19,6 +19,7 @@ const AppRouter = () => {
 				<Route path={'/todos/:id'} element={<TodoItemPage />} />
 
 				<Route path={'/inputs'} element={<InputExample />} />
+				<Route path={'/examples'} element={<InputExample />} />
 			</Routes>
 		</BrowserRouter>
 	);
