@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import newCustomer, { ClassCustomer } from '../../ELitvinova/typeScript/classes';
 
 const InputExample = () => {
 	const [value, setValue] = useState<string>('');
