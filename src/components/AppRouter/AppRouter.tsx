@@ -6,6 +6,7 @@ import InputExample from '../InputExample/InputExample';
 import Navbar from '../Navbar/Navbar';
 import UserItemPage from '../Users/UserItemPage';
 import TodoItemPage from '../Todos/TodoItemPage';
+import CodeWars from '../CodeWars/CodeWars';
 
 const AppRouter = () => {
 	return (
@@ -19,7 +20,7 @@ const AppRouter = () => {
 				<Route path={'/todos/:id'} element={<TodoItemPage />} />
 
 				<Route path={'/inputs'} element={<InputExample />} />
-				<Route path={'/examples'} element={<InputExample />} />
+				<Route path={'/codewars'} element={<CodeWars />} />
 			</Routes>
 		</BrowserRouter>
 	);

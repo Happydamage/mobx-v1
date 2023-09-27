@@ -1,29 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.scss';
-import CustomButton from '../CustomButton/CustomButton';
 import { cn } from '@bem-react/classname';
+import { Button } from '@mui/material';
 
 const cnNavbar = cn('Navbar');
 
 const Navbar = () => {
 	return (
 		<div className={cnNavbar()}>
-			<CustomButton>
+			<Button variant='contained'>
 				<Link to={'/'}>Home</Link>
-			</CustomButton>
-			<CustomButton>
+			</Button>
+			<Button variant='contained'>
 				<Link to={'/users'}>Users</Link>
-			</CustomButton>
-			<CustomButton>
+			</Button>
+			<Button variant='contained'>
 				<Link to={'/todos'}>Todos</Link>
-			</CustomButton>
-			<CustomButton>
+			</Button>
+			<Button variant='contained'>
 				<Link to={'/inputs'}>Inputs</Link>
-			</CustomButton>
-			<CustomButton>
-				<Link to={'/inputs'}>Examples</Link>
-			</CustomButton>
+			</Button>
+			<Button variant='contained'>
+				<Link to={'/codewars'}>CodeWars</Link>
+			</Button>
 		</div>
 	);
 };
