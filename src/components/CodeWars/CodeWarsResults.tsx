@@ -14,7 +14,30 @@ const CodeWarsResults = (): JSX.Element => {
 
 		return z;
 	}
-	//=======================================
+	//====================================================
+
+	//Task 2
+	interface IGame {
+		rock: string;
+		scissors: string;
+		paper: string;
+	}
+
+	const gameRules = {
+		rock: 'scissors',
+		scissors: 'paper',
+		paper: 'rock'
+	};
+
+	const rps = (p1: keyof IGame, p2: string) => {
+		if (p1 === p2) {
+			return 'Draw!';
+		}
+		if (p2 === gameRules[p1]) {
+			return 'Player 1 won!';
+		}
+	};
+	//=====================================================
 
 	return (
 		<div>

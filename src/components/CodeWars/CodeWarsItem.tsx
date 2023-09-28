@@ -6,8 +6,8 @@ const cnCodeWarsItem = cn('CodeWarsItem');
 
 interface CodeWarsItemProps {
   task: string;
-	taskNumber: string;
-  example: string;
+	taskNumber: number;
+  example?: string;
 	result?: string;
 }
 
