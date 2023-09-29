@@ -4,18 +4,9 @@ import CodeWarsItem from './CodeWarsItem';
 
 const cnCodeWars = cn('CodeWars');
 
+
+
 const CodeWars = (): JSX.Element => {
-
-	// const x: [string | number] = [10, 5, 15, '10'];
-	//
-	// const sumMix = (x: [string | number]) => {
-	// 	for (let i = 0; i <= x.length; i++) {
-	// 		let sum = 0;
-	// 		return sum += i;
-	// 	}
-	// };
-
-	// console.log(sumMix(x));
 
 
 	return (
@@ -32,7 +23,9 @@ const CodeWars = (): JSX.Element => {
 			{/*/>*/}
 
 			{/*<CodeWarsItem task={'Камень ножницы бумага'} taskNumber={2} />*/}
-
+			{/*<CodeWarsItem task={'Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.\n' +*/}
+			{/*	'\n' +*/}
+			{/*	'Return your answer as a number.'} taskNumber={3} />*/}
 
 		</div>
 	);

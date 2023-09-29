@@ -39,6 +39,20 @@ const CodeWarsResults = (): JSX.Element => {
 	};
 	//=====================================================
 
+	//Task 3
+	const dataArray:(number | string)[] = [10, 5, 15, '10'];
+
+	function dataSum(data:(string | number)[]) {
+		let sum = 0;
+
+		for (let i = 0; i < data.length; i++) {
+			sum += +data[i];
+		}
+		console.log(sum);
+	}
+	dataSum(dataArray);
+	//=====================================================
+
 	return (
 		<div>
 			<div></div>
