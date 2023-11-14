@@ -1,12 +1,12 @@
 import React from 'react';
 import { cn } from '@bem-react/classname';
-import CodeWarsItem from './CodeWarsItem';
 
 const cnCodeWars = cn('CodeWars');
 
 
 
 const CodeWars = (): JSX.Element => {
+
 
 
 	return (
@@ -25,8 +25,12 @@ const CodeWars = (): JSX.Element => {
 			{/*<CodeWarsItem task={'Камень ножницы бумага'} taskNumber={2} />*/}
 			{/*<CodeWarsItem task={'Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.\n' +*/}
 			{/*	'\n' +*/}
-			{/*	'Return your answer as a number.'} taskNumber={3} />*/}
+			{/*	'Return your answer as a number.'} taskNumber={2} />*/}
 
+			{/*<CodeWarsItem task={'Камень ножницы бумага'} taskNumber={4} />*/}
+			{/*<CodeWarsItem task={'An isogram is a word that has no repeating letters, consecutive or non-consecutive. ' +*/}
+			{/*	'Implement a function that determines whether a string that contains only letters is an isogram. ' +*/}
+			{/*	'Assume the empty string is an isogram. Ignore letter case.'} taskNumber={4} />*/}
 		</div>
 	);
 };

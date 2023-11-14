@@ -53,6 +53,13 @@ const CodeWarsResults = (): JSX.Element => {
 	dataSum(dataArray);
 	//=====================================================
 
+	//Task 4
+	function isIsogram(str:string){
+		const set = new Set(str.toUpperCase());
+		console.log(Array.from(set).join('') === str.toUpperCase());
+	}
+	//=====================================================
+
 	return (
 		<div>
 			<div></div>
