@@ -56,7 +56,11 @@ const CodeWarsResults = (): JSX.Element => {
 	//Task 4
 	function isIsogram(str:string){
 		const set = new Set(str.toUpperCase());
-		console.log(Array.from(set).join('') === str.toUpperCase());
+		return Array.from(set).join('') === str.toUpperCase();
+
+		// or
+
+		// return new Set(str.toUpperCase()).size == str.length;
 	}
 	//=====================================================
 
