@@ -22,7 +22,10 @@ const Navbar = () => {
 				<Link to={'/inputs'}>Inputs</Link>
 			</Button>
 			<Button variant='contained'>
-				<Link to={'/codewars'}>CodeWars</Link>
+				<Link to={'/code-wars'}>CodeWars</Link>
+			</Button>
+			<Button variant='contained'>
+				<Link to={'/react-form-hook'}>ReactFormHook</Link>
 			</Button>
 		</div>
 	);

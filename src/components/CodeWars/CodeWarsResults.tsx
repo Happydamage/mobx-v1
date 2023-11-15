@@ -14,6 +14,7 @@ const CodeWarsResults = (): JSX.Element => {
 
 		return z;
 	}
+
 	//====================================================
 
 	//Task 2
@@ -37,6 +38,7 @@ const CodeWarsResults = (): JSX.Element => {
 			return 'Player 1 won!';
 		}
 	};
+
 	//=====================================================
 
 	//Task 3
@@ -51,6 +53,7 @@ const CodeWarsResults = (): JSX.Element => {
 		console.log(sum);
 	}
 	dataSum(dataArray);
+
 	//=====================================================
 
 	//Task 4

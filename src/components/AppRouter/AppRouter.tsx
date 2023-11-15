@@ -7,6 +7,7 @@ import Navbar from '../Navbar/Navbar';
 import UserItemPage from '../Users/UserItemPage';
 import TodoItemPage from '../Todos/TodoItemPage';
 import CodeWars from '../CodeWars/CodeWars';
+import { FormHook } from '../FormHook/FormHook';
 
 const AppRouter = () => {
 	return (
@@ -20,7 +21,8 @@ const AppRouter = () => {
 				<Route path={'/todos/:id'} element={<TodoItemPage />} />
 
 				<Route path={'/inputs'} element={<InputExample />} />
-				<Route path={'/codewars'} element={<CodeWars />} />
+				<Route path={'/code-wars'} element={<CodeWars />} />
+				<Route path={'/react-form-hook'} element={<FormHook />} />
 			</Routes>
 		</BrowserRouter>
 	);

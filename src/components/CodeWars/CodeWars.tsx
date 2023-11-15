@@ -3,11 +3,7 @@ import { cn } from '@bem-react/classname';
 
 const cnCodeWars = cn('CodeWars');
 
-
-
 const CodeWars = (): JSX.Element => {
-
-
 
 	return (
 		<div className={cnCodeWars()}>
