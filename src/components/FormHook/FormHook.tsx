@@ -1,54 +1,37 @@
 import React from 'react';
-import { Resolver, useForm } from 'react-hook-form';
+import { SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import { cn } from '@bem-react/classname';
 import './FormHook.scss';
 
 const cnFormHook = cn('FormHook');
 
-type FormValues = {
-	firstName: string;
+type MyForm = {
+	name: string;
+	age: string;
 }
 
-const resolver: Resolver<FormValues> = async (values) => {
-	return {
-		values: values.firstName ? values : {},
-		errors: !values.firstName
-			? {
-				firstName: {
-					type: 'required',
-					message: 'This is required.',
-				},
-			}
-			: {},
-	};
-};
-
 export const FormHook = () => {
+	const { register, handleSubmit,
+	} = useForm<MyForm>({
+		defaultValues: {}
+	});
 
-	const {
-		register,
-		formState: {
-			errors,
-		},
-		handleSubmit,
-	} = useForm<FormValues>({resolver});
+	const submit: SubmitHandler<MyForm> = data => {
+		console.log(data);
+	};
 
-	const onSubmit = (data: any) => {
-		alert(JSON.stringify(data));
+	const error: SubmitErrorHandler<MyForm> = data => {
+		console.log(data);
 	};
 
 	return (
 		<div className={cnFormHook()}>
 			<h1>React Hook Form</h1>
 
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<label>
-				First Name
-					<input {...register('firstName',{required: 'Поле обязательно к заполнению'})} />
-				</label>
-				<div>
-					{errors?.firstName && <p>{errors?.firstName?.message || 'Error!'}</p>}
-				</div>
+			<form onSubmit={handleSubmit(submit, error)}>
+				<input type='text' {...register('name', {required: true})} />
+				<input type='number' {...register('age')} />
+
 				<input type='submit' />
 			</form>
 		</div>

@@ -1,5 +1,6 @@
 .FormHook
 {
+  width: 50%;
   background: #0e101c;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   color: white;
@@ -71,5 +72,10 @@
     padding: 10px 15px;
     margin-bottom: 15px;
     font-size: 14px;
+  }
+
+  label p {
+    margin: 0;
+    padding-bottom: .3rem;
   }
 }
