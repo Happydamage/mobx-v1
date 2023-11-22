@@ -7,13 +7,21 @@ const cnFormHook = cn('FormHook');
 
 type MyForm = {
 	name: string;
-	age: string;
+	age: number;
 }
 
 export const FormHook = () => {
-	const { register, handleSubmit,
+	const {
+		register,
+		handleSubmit,
+		clearErrors,
+		reset,
+		setValue,
+		formState: {errors},
 	} = useForm<MyForm>({
-		defaultValues: {}
+		defaultValues: {
+
+		}
 	});
 
 	const submit: SubmitHandler<MyForm> = data => {
@@ -29,10 +37,23 @@ export const FormHook = () => {
 			<h1>React Hook Form</h1>
 
 			<form onSubmit={handleSubmit(submit, error)}>
-				<input type='text' {...register('name', {required: true})} />
+				<label>
+					<p>Name</p>
+					<input type='text' {...register('name', {required: true})} />
+					<p>{errors.name ? 'Поле не может быть пустым' : ''}</p>
+				</label>
+
 				<input type='number' {...register('age')} />
 
-				<input type='submit' />
+				<button type={'button'} onClick={() => clearErrors()}>Очистить ошибки</button>
+
+				<button onClick={() => reset({age: 0, name: ''})}>
+					Очистить форму
+				</button>
+
+				<button onClick={() => setValue('name', 'Вася')}>Теперь ты Васёк</button>
+
+				<input type={'submit'} />
 			</form>
 		</div>
 	);
