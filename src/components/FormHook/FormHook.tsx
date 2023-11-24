@@ -2,6 +2,7 @@ import React from 'react';
 import { SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import { cn } from '@bem-react/classname';
 import './FormHook.scss';
+import FormFields from './exampleV1/FormFields';
 
 const cnFormHook = cn('FormHook');
 
@@ -34,7 +35,7 @@ export const FormHook = () => {
 
 	return (
 		<div className={cnFormHook()}>
-			<h1>React Hook Form</h1>
+			<div>React Hook Form</div>
 
 			<form onSubmit={handleSubmit(submit, error)}>
 				<label>
@@ -54,6 +55,8 @@ export const FormHook = () => {
 				<button onClick={() => setValue('name', 'Вася')}>Теперь ты Васёк</button>
 
 				<input type={'submit'} />
+
+				<FormFields />
 			</form>
 		</div>
 	);
