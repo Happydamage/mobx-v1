@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import TodosList from './TodosList';
-import { TodoModel } from './TodoModel';
+import { schemaTodo, TodoModel } from './TodoModel';
 import axios from 'axios';
-import TodoListJH from '../../componentsMobx/TodoList';
 import store from '../../Store/store';
 import CustomButton from '../CustomButton/CustomButton';
+import { TodoListJH } from '../../componentsMobx/TodoList';
+import { ZodError } from 'zod';
 
 const TodosPage = () => {
 	const [todos, setTodos] = useState<TodoModel[]>([]);
@@ -19,22 +20,35 @@ const TodosPage = () => {
 	}
 
 	const onLoad = () => {
-		fetch('https://jsonplaceholder.typicode.com/todos?_limit=14')
+		fetch('https://jsonplaceholder.typicode.com/todos?_limit=10')
 			.then((resp) => resp.json())
 			.then((data) => (store.todos = data));
 	};
 
+	const onLoad2 = () => {
+		fetch('https://jsonplaceholder.typicode.com/todo?_limit=12')
+			.then((resp) => resp.json())
+			.then(result => schemaTodo.array().parseAsync(result))
+			.then((data) => {
+				setTodos(data);
+			})
+			.catch(e => {
+				if (e instanceof ZodError) {
+					alert('шиш');
+				}
+			});
+	};
+
 	useEffect(() => {
-		fetchTodos();
+		// fetchTodos();
 	}, []);
-
-
 
 	return (
 		<div>
 			<TodosList todos={todos} />
 			<TodoListJH />
-			<CustomButton onClick={onLoad}>Load Todos</CustomButton>
+			<CustomButton onClick={onLoad}>Load Todos JH</CustomButton>
+			<CustomButton onClick={onLoad2}>Load Todos</CustomButton>
 		</div>
 	);
 };

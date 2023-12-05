@@ -1,24 +1,24 @@
-import React from 'react';
-import store, { TodoJH } from '../Store/store';
+import React, { FC } from 'react';
+import store from '../Store/store';
 import Card from '../components/Card/Card';
 import CustomButton from '../components/CustomButton/CustomButton';
 import { observer } from 'mobx-react';
 import TodoAdd from './TodoAdd';
+import { TodoModel } from '../components/Todos/TodoModel';
 
-const TodoListItems = () => {
+const TodoListItems:FC = () => {
 	return (
 		<>
 			<TodoAdd />
-			{store.todos.map((todo: TodoJH) =>
-				<Card key={todo.id}>
+			{store.todos.map((todo: TodoModel) =>
+				<Card key={todo.userId}>
 					<input
-						type={'checkbox'}
-						checked={todo.done}
-						onClick={() => todo.done = !todo.done}
+						checked={todo.completed}
+						onClick={() => todo.completed = !todo.completed}
 					/>
 					<input
-						value={todo.text}
-						onChange={(evt) => (todo.text = evt.target.value)}
+						value={todo.title}
+						onChange={(evt) => (todo.title = evt.target.value)}
 						disabled
 					/>
 					<CustomButton
@@ -33,10 +33,8 @@ const TodoListItems = () => {
 
 const TodoListItemsObserver = observer(TodoListItems);
 
-const TodoListJH = () => {
+export const TodoListJH = () => {
 	return (
 		<TodoListItemsObserver />
 	);
 };
-
-export default TodoListJH;

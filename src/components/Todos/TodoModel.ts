@@ -1,6 +1,10 @@
-export interface TodoModel {
-  userId: number,
-  id: number,
-  title: string,
-  completed: boolean
-}
+import { z } from 'zod';
+
+export const schemaTodo = z.object({
+	userId: z.number(),
+	id: z.number(),
+	title: z.string(),
+	completed: z.boolean()
+});
+
+export type TodoModel = z.infer<typeof schemaTodo>;

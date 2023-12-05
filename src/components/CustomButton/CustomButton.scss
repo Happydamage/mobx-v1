@@ -1,10 +1,15 @@
 .CustomButton
 {
-  padding: 0;
+  padding: .5rem;
+  color: white;
+  background: #621d94;
+  font-weight: bold;
   min-height: 2rem;
   border-radius: .5rem;
   outline: none;
   overflow: hidden;
+  border: none;
+  cursor: pointer;
 
   a
   {

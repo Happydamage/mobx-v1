@@ -1,25 +1,21 @@
 import {makeAutoObservable} from 'mobx';
+import { TodoModel } from '../components/Todos/TodoModel';
 
-export interface TodoJH {
-  id: number;
-  text: string;
-  done: boolean;
-}
-
-const removeTodo = (todos: TodoJH[], id: number): TodoJH[] =>
+const removeTodo = (todos: TodoModel[], id: number): TodoModel[] =>
 	todos.filter((todo) => todo.id !== id);
 
-const addTodo = (todos: TodoJH[], text: string): TodoJH[] => [
+const addTodo = (todos: TodoModel[], title: string): TodoModel[] => [
 	...todos,
 	{
 		id:Math.max(0, Math.max(...todos.map(({ id }) => id))) + 1,
-		text,
-		done: false,
+		userId: 0,
+		title,
+		completed: false,
 	}
 ];
 
 class Store {
-	todos: TodoJH[] = [];
+	todos: TodoModel[] = [];
 	newTodo = '';
 
 	constructor() {
