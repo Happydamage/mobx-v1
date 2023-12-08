@@ -11,7 +11,7 @@ interface CodeWarsItemProps {
 	result?: string;
 }
 
-const CodeWarsItem = (props: CodeWarsItemProps): JSX.Element => {
+export const CodeWarsItem = (props: CodeWarsItemProps): JSX.Element => {
 	return (
 		<div className={cnCodeWarsItem()}>
 			<div className={cnCodeWarsItem('Task')}>
@@ -32,5 +32,3 @@ const CodeWarsItem = (props: CodeWarsItemProps): JSX.Element => {
 		</div>
 	);
 };
-
-export default CodeWarsItem;

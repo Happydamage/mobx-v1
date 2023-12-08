@@ -5,6 +5,26 @@ const cnCodeWars = cn('CodeWars');
 
 const CodeWars = (): JSX.Element => {
 
+	 function sumArray(array:number[] | null): number {
+		 if (array && array.length > 0) {
+		 const removeMin = Math.min.apply(null, array);
+		 const removeMax = Math.max.apply(null, array);
+
+		 // return array.filter(item => item !== removeMin && item !== removeMax).reduce((a, b) => a + b);
+		 // } else {
+		 // return 0;
+
+			 if (array) {
+				 array.find(el => {if (el === removeMin) {
+					 return !el;
+				 }});
+			 }
+		 }
+	}
+
+	// console.log(sumArray([ 1, 1, 11, 2, 3 ]));
+	console.log(sumArray([-10,-10,-10,-10,-9,-9,-9,-9,-8,-8,-7,-6,-6,-6,-5,-5,-5,-3,-2,-2,-2,-2,-2,-1,-1,-1,-1,0,1,1,1,2,2,3,3,3,4,5,5,5,5,6,7,7,7,7,8,8,9,9,10,10,10,11,11,13,14,14,15,15,15,16,16,16,16,18,20,20,20,21,21,22,22]));
+
 	return (
 		<div className={cnCodeWars()}>
 			{/*<CodeWarsItem*/}
