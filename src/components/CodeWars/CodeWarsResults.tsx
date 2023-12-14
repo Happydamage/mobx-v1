@@ -67,6 +67,37 @@ const CodeWarsResults = (): JSX.Element => {
 	}
 	//=====================================================
 
+	//Task 5
+	//variant 1
+	class Kata {
+		static validatePin(pin: string): boolean {
+			return /^(\d{4}|\d{6})$/.test(pin);
+		}
+	}
+	//variant 2
+	// export class Kata {
+	// 	static validatePin(pin: string): boolean {
+	// 		return ((pin.length === 4 || pin.length === 6) && /^\d+$/.test(pin));
+	// 	}
+	// }
+	//=====================================================
+
+	//Task 6
+	//variant 1
+	function getMiddle(s:string) {
+		const middle = s.length / 2;
+		const integer = Number.isInteger(middle);
+
+		return integer ? s[middle - 1] + s[middle] : s[middle - 0.5];
+	}
+	//variant 2
+
+	 // function getMiddle(s:string) {
+	// const middle = Math.ceil(s.length / 2) - 1;
+	// return s.slice(middle, s.length - middle);
+	// }
+	//=====================================================
+
 	return (
 		<div>
 			<div></div>

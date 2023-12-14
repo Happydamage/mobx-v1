@@ -1,29 +1,27 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { cn } from '@bem-react/classname';
 
 const cnCodeWars = cn('CodeWars');
 
-const CodeWars = (): JSX.Element => {
+const CodeWars: FC = () => {
 
-	 function sumArray(array:number[] | null): number {
-		 if (array && array.length > 0) {
-		 const removeMin = Math.min.apply(null, array);
-		 const removeMax = Math.max.apply(null, array);
+	function findEvenIndex(arr: number[])
+	{
+		const length = arr.length;
+		const newArr1 = [];
 
-		 // return array.filter(item => item !== removeMin && item !== removeMax).reduce((a, b) => a + b);
-		 // } else {
-		 // return 0;
+		for (let i = 0; i < length; i++) {
+			console.log(arr.splice(0, 1));
 
-			 if (array) {
-				 array.find(el => {if (el === removeMin) {
-					 return !el;
-				 }});
-			 }
-		 }
+		// 	if (length > 1) {
+		// 		newArr1.push(arr.reduce((a, b) => a + b, 0));
+		// 		console.log();
+		// 	}
+		}
+		// console.log(newArr1);
 	}
 
-	// console.log(sumArray([ 1, 1, 11, 2, 3 ]));
-	console.log(sumArray([-10,-10,-10,-10,-9,-9,-9,-9,-8,-8,-7,-6,-6,-6,-5,-5,-5,-3,-2,-2,-2,-2,-2,-1,-1,-1,-1,0,1,1,1,2,2,3,3,3,4,5,5,5,5,6,7,7,7,7,8,8,9,9,10,10,10,11,11,13,14,14,15,15,15,16,16,16,16,18,20,20,20,21,21,22,22]));
+	console.log(findEvenIndex([2,2,2,4,3,2,1]));
 
 	return (
 		<div className={cnCodeWars()}>
@@ -43,10 +41,20 @@ const CodeWars = (): JSX.Element => {
 			{/*	'\n' +*/}
 			{/*	'Return your answer as a number.'} taskNumber={2} />*/}
 
-			{/*<CodeWarsItem task={'Камень ножницы бумага'} taskNumber={4} />*/}
+			{/*<CodeWarsItem task={'Isogram'} taskNumber={4} />*/}
 			{/*<CodeWarsItem task={'An isogram is a word that has no repeating letters, consecutive or non-consecutive. ' +*/}
 			{/*	'Implement a function that determines whether a string that contains only letters is an isogram. ' +*/}
 			{/*	'Assume the empty string is an isogram. Ignore letter case.'} taskNumber={4} />*/}
+
+			{/*<CodeWarsItem task={'Проверка пинкода'} taskNumber={5} />*/}
+			{/*<CodeWarsItem task={'ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
+			If the function is passed a valid PIN string, return true, else return false.'} taskNumber={5} />*/}
+
+			{/*<CodeWarsItem task={'Середина строки'} taskNumber={6} />*/}
+			{/*<CodeWarsItem task={'You are going to be given a word.
+			Your job is to return the middle character of the word.
+			If the word's length is odd, return the middle character.
+			If the word's length is even, return the middle 2 characters.'} taskNumber={6} />*/}
 		</div>
 	);
 };
