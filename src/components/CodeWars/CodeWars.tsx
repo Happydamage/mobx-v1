@@ -5,23 +5,30 @@ const cnCodeWars = cn('CodeWars');
 
 const CodeWars: FC = () => {
 
-	function findEvenIndex(arr: number[])
-	{
-		const length = arr.length;
-		const newArr1 = [];
 
-		for (let i = 0; i < length; i++) {
-			console.log(arr.splice(0, 1));
+	 function duplicateEncode(word: string){
+		 let result = '';
 
-		// 	if (length > 1) {
-		// 		newArr1.push(arr.reduce((a, b) => a + b, 0));
-		// 		console.log();
-		// 	}
-		}
-		// console.log(newArr1);
+		 for (let i = 0; i < word.length; i++) {
+			 const regexp = new RegExp(word[i],'gi');
+			 if (word.match(regexp)?.length !== 1) {
+				result += ')';
+			 } else {
+				 result += '(';
+			 }
+		 }
+
+		 return result;
 	}
 
-	console.log(findEvenIndex([2,2,2,4,3,2,1]));
+	console.log(duplicateEncode('(( @"),"))(('));
+	console.log('(( @"),"))((');
+
+	// class Kata {
+	// 	static disemvowel(str: string): string {
+	// 		return str.replace(/[aeiou]/ig, '');
+	// 	}
+	// }
 
 	return (
 		<div className={cnCodeWars()}>
