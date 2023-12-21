@@ -6,20 +6,18 @@ const cnCodeWars = cn('CodeWars');
 const CodeWars: FC = () => {
 
 	 function duplicateEncode(word: string){
-		 const symbol = '[a-zA-Z0-9]';
 		 const specialSymbol = '([\\]\\[\\$\\%\\^\\&\\*\\(\\)\\_\\+\\=\\-])';
 		 let result = '';
 
 		 for (let i = 0; i < word.length; i++) {
-			 if (!word[i].match(specialSymbol)) {
-				 const regexp = new RegExp(word[i], 'gi');
-				 	word.match(regexp)?.length !== 1 ? result += ')' : result += '(';
-			 }
+				 const regexp = new RegExp(!word[i].match(specialSymbol) ? word[i] : '\\' + word[i], 'gi');
+				 word.match(regexp)?.length !== 1 ? result += ')' : result += '(';
 		 }
 		 return result;
 	}
 
-	console.log(duplicateEncode('121212123'));
+	console.log(duplicateEncode('12121212(((((()578'));
+	// console.log('((((('.match('\\('));
 
 	// class Kata {
 	// 	static disemvowel(str: string): string {
